@@ -85,7 +85,8 @@ Deux façons de rendre notre composant statefull: classe ou hook
 Pour classe, voir Doc et YT
 Déclaration d'un hook:
 const [skills, setSkills] = React.useState(initialSkills) dans la fonction MySkills
-les paramètres de la constance correspondent à 1 : le nom qu'on veut utiliser pour pas modifier l'objet original
+les paramètres de la constance correspondent à 
+1 : le nom qu'on veut utiliser pour pas modifier l'objet original
 2: la méthode setter
 Le paramètre de userState() est l'objet qu'on récupère.
 la fonction addSkillPython viendra s'imbriquer dans la fonction mySkills à la suite de note
@@ -109,6 +110,6 @@ function handleChange(event){
   }
 On récupère "email" dans la window alert et on renomme la value de l'input comme étant "email"
 -Validation du formulaire
-créer le state const [email, setEmail] = React.useState()
+créer le state const [error, setError] = React.useState()
 setError(event.target.value.includes('@') ? null : "L'email n'est pas valide.") dans handleChange()
 <div style={{color: 'red'}}>{error}</div> à la suite de input connexion

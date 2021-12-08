@@ -1,3 +1,38 @@
 .App {
   text-align: center;
 }
+.App-header {
+  background-color: black;
+  height: 20vh;
+  width: 100vw;
+  color: azure;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+form{
+  border: solid 1px;
+  border-color: red;
+}
+
+.App-content {
+  background-color: white;
+  height: 60vh;
+  width: 100vw;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App-footer {
+  background-color: grey;
+  height: 20vh;
+  width: 100vw;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
