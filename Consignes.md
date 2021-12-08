@@ -8,10 +8,12 @@ Formulaire de contact qui gère les messages d'erreur.
 
 # Header
 
-Ajouter un input avec son Name, une fois le nom donné, afficher un message d'accueil
-Utilisation d'un state pour gérer le nom qu'il y ait un arobase
+Ajouter un input avec son Name, une fois le nom donné, afficher un message d'accueil V
+Utilisation d'un state pour gérer le nom qu'il y ait un arobase V
 
 
 # Content 
 
-Choisir parmis une liste de 6 compétences, 3 que nous maitrisons pour le projet et qui s'ajouteront à une liste
+Choisir parmis une liste de 6 compétences, 3 que nous maitrisons pour le projet et qui s'ajouteront à une liste. V
+Faire disparaitre la possibilité d'ajout après clic. 
+Limiter le nombre de skills à 3. V
