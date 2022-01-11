@@ -23,10 +23,23 @@ Ajouter un input avec son adresse mail, une fois l'adresse donnée, afficher un 
 Utilisation d'un state pour gérer le mail qu'il y ait un arobase {true}
 Boutton de show Skills qui permet de récapituler en message d'alerte les skills qui seront submit.
 
-Challenge React Patterns
 
-# Props drilling, state hoisting et lifting state up, proxy component, props function à incorporer
+# -------------------------------------------Challenge React Patterns-------------------------------------------------------- #
+# Maj de tout le site (props, states pour qu'il soit conforme aux paterns vus)
+
+# Proxy component
+Remplacer button par le composant button pour éviter la répétition. V
+
+# Props function
+Utiliser le système de fonction de calcul vu avec une fonction appelée direct onClick={() => handleChange(a, b)}
+
+# Props drilling
+Utiliser des props le plus possible mais seulement depuis App() V
 
 # Un peu de HOC (réutiliser les fonctionnalités vu à l'exercice)
+Utilisation d'une dataSource
+Utilisation de withFunction()
 
-# rétuiliser les fonctionnalités vu dans l'exercice lifting state up
+# Réutiliser les fonctionnalités vu dans l'exercice lifting state up/ State hoisting
+Les states sont déclarés dans le composant App V
+Sytème de prénom comme vu dans l'exerciceV
