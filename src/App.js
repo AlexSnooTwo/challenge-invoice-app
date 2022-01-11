@@ -7,6 +7,7 @@ import { ErrorBoundary } from "react-error-boundary";
 function App() {
   return (
     <div className="App">
+    {/*Ligne de test pour le git*/}
     </div>
   );
 }
