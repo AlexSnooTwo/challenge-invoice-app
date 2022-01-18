@@ -43,3 +43,18 @@ Utilisation de withFunction()
 # Réutiliser les fonctionnalités vu dans l'exercice lifting state up/ State hoisting
 Les states sont déclarés dans le composant App V
 Sytème de prénom comme vu dans l'exerciceV
+
+# ---------------------------------------------Challenge invoice app----------------------------------------------------------- #
+Voir les modèles pour la partie design
+
+Temps estimé au projet : 
+
+- Créer une fausse API dans un data JSON qui recoupe toutes les infos et data à réutiliser V
+- View the optimal layout for the app depending on their device's screen size
+- See hover states for all interactive elements on the page => a faire demain
+- Create, read, update, and delete invoices => 
+- Receive form validations when trying to create/edit an invoice => 
+- Save draft invoices, and mark pending invoices as paid
+- Filter invoices by status (draft/pending/paid)
+- Toggle light and dark mode
+- Bonus: Keep track of any changes, even after refreshing the browser (localStorage could be used for this if you're not building out a full-stack app)

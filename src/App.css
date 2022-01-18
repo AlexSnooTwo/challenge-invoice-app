@@ -2,44 +2,217 @@ ul {
   list-style: none;
 }
 .App {
-  text-align: center;
-}
-.App-header {
-  background-color: rgba(25, 28, 33, 255);
-  height: 20vh;
-  width: 100vw;
-  font-size: 2rem;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-
-.App-content {
   background-color: white;
-  height: 50vh;
-  width: 100vw;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 5.88fr 94.12fr;
+}
+
+/*--------------------------------------------------------------INVOICE COLUMN-----------------------------------------------------------------*/
+.InvoiceColumn {
+  background-color: #1e203a;
+  color: white;
+  border-right: solid;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  display: grid;
+  grid-template-rows: 11fr 78fr 11fr;
+}
+
+#circle-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #7d5cf9;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+#circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background: white;
+}
+
+#circle-vow {
+  background-color: #7d5cf9;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(75% 0, 25% 0, 50% 50%);
+}
+
+#profile-div {
+  border-top: solid 2px;
+  border-color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#center-column {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+#moon {
+  height: 30px;
+  width: 30px;
+  padding-bottom: 25px;
+}
+#moon:hover {
+  height: 35px;
+  width: 35px;
+  cursor: pointer;
+}
+
+#sun {
+  height: 30px;
+  width: 30px;
+  padding-bottom: 25px;
+}
+
+#sun:hover{
+  height: 35px;
+  width: 35px;
+  cursor: pointer;
+}
+/*----------------------------------------------InvoiceApp-----------------------------------------------------------------------*/
+.InvoiceApp {
   color: black;
+  background-color: #f9f9fa;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: auto;
+}
+
+.InvoiceSection {
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.InvoiceDiv {
+  width: 100%;
+  height: 55px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  border: solid;
+  border-color: white;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.InvoiceLi {
+  width: 15%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.InvoiceLiButton {
+  width: 10%;
+  font-weight: 700;
+  background-color: #fffaef;
+  border-radius: 10px;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.InvoiceHeader {
+  width: 60vw;
+  height: 15vh;
+  display: flex;
+  flex-direction: row;
   justify-content: space-evenly;
+  align-items: center;
+  margin-top: 5vh;
 }
 
-.App-contact {
-  color: white;
-  background-color: rgba(25, 28, 33, 255);
-  height: 20vh;
-  width: 100vw;
+.InvoiceHeaderLeft {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
+  width: 50%;
+  height: 100%;
+}
+.InvoiceHeaderRight {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  height: 100%;
+  align-items: center;
 }
 
-.App-footer {
-  height: 10vh;
-  width: 100vw;
-  background-color: rgb(218, 41, 28);
+#title {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.statusButton {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.buttonInvoice {
+  background-color: #7d5cf9; /* Green */
   color: white;
+  text-align: center;
+  font-size: 1rem;
+  border: solid;
+  border-radius: 20px;
+  width: 65%;
+  height: 40%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.buttonInvoice:hover {
+  background-color: #9783fa;
+  cursor: pointer;
+}
+
+.buttonAdd {
+  width: 22.5%;
+  height: 80%;
+  border-radius: 20px;
+  background: white;
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+.buttonContainer {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#buttonplus {
+  color: #7d5cf9;
+  font-weight: bold;
+  font-size: 18;
+}
+
+.selectFilter {
+  margin-left: 10px;
+  margin-top: 5px;
+  width: 20px;
+  background-color: #f9f9fa;
+  border: none;
+  border-radius: 20px;
 }
