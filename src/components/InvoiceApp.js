@@ -1,65 +1,71 @@
 import * as React from "react";
 import { ThemeContext } from "../ThemeContext";
 import { NewInvoice } from "./NewInvoice";
-import dataJSON from "../data.json";
+import Modal from "./Modal";
 import { FilterByStatus } from "./FilterByStatus";
 
-
-export function InvoiceApp() {
+export function InvoiceApp({datas, setAllDatas, onAddData}) {
   const theme = React.useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
   const [status, setStatus] = React.useState();
+  const [openModal, setOpenModal] = React.useState(false)
+  
+
   console.log(status);
   return (
     <div
       className="InvoiceApp"
       style={darkMode ? { backgroundColor: "#151624", color: "white" } : {}}
     >
-      <InvoiceHeader setStatus={setStatus} />
-      <InvoiceSection status={status} />
+      <InvoiceHeader datas={datas} setStatus={setStatus} setAllDatas={setAllDatas} setOpenModal={setOpenModal}/>
+      <InvoiceSection datas={datas} status={status}  />
+      <Modal open={openModal} setOpenModal={setOpenModal} datas={datas} onAddData={onAddData}></Modal>
     </div>
   );
 }
 
-function InvoiceHeader({ setStatus }) {
+function InvoiceHeader({datas, setStatus, setOpenModal}) {
   return (
     <div className="InvoiceHeader">
       <div className="InvoiceHeaderLeft">
         <div id="title">Invoices</div>
-        <div
+        <div className="fullText"
           style={{ color: "#bfbcc7" }}
-        >{`There are ${dataJSON.length} total invoices`}</div>
+        >{`There are ${datas.length} total invoices`}</div>
+        <div className="shortText"
+          style={{ color: "#bfbcc7" }}
+        >{`${datas.length} invoices`}</div>
       </div>
       <div className="InvoiceHeaderRight">
         <FilterByStatus setStatus={setStatus} />
         <div className="buttonContainer">
-          <NewInvoice />
+          <NewInvoice setOpenModal={setOpenModal}/>
         </div>
       </div>
     </div>
   );
 }
 
-function InvoiceSection({ status }) {
+function InvoiceSection({datas, status}) {
   const theme = React.useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
-  let data = dataJSON.slice()
-  if (status === "paid"){
-      data = data.filter(data => data.status === "Paid")
-    console.log("test paid")
-  }
-  if (status === "pending"){
-    data = data.filter(data => data.status === "Pending")
-    console.log("test paid")
-  }
-  if (status === "draft"){
-    data = data.filter(data => data.status === "Draft")
-    console.log("test paid")
-  }
+  let internData = datas
+  // if (status === "paid"){
+  //   internData = datas.filter(data => data.status === "Paid")
+  //   console.log(`test paid ${internData.length}`)
+  // }
+  // if (status === "pending"){
+  //   internData = datas.filter(data => data.status === "Pending")
+  //   console.log(`test pending ${internData.length}`)
+  // }
+  // if (status === "draft"){
+  //   internData = datas.filter(data => data.status === "Draft")
+  //   console.log(`test draft ${internData.length}`)
+  // }
   return (
     <section className="InvoiceSection">
-      {data.map((data) => (
-        <div
+      {internData.map((data) => (
+        <div key={data.serial}
           className="InvoiceDiv"
           style={
             darkMode
@@ -67,7 +73,7 @@ function InvoiceSection({ status }) {
               : {}
           }
         >
-          <div className="InvoiceLi" style={{ fontWeight: 700 }}>
+          <div className="InvoiceLi" style={{ fontWeight: 700 }} >
             #{data.serial}
           </div>
           <div
@@ -82,7 +88,7 @@ function InvoiceSection({ status }) {
           >
             {data.name}
           </div>
-          <div className="InvoiceLi" style={{ fontWeight: 700, fontSize: 18 }}>
+          <div className="InvoiceLi" style={{ fontWeight: 700, fontSize: "1.2em" }}>
             £{data.price}
           </div>
           <div
