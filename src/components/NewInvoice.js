@@ -1,20 +1,25 @@
-import * as React from "react"
+import * as React from "react";
 import { ThemeContext } from "../ThemeContext";
 
-export function NewInvoice() {
-    const theme = React.useContext(ThemeContext);
-    const darkMode = theme.state.darkMode;
-    function toggleNewInvoice() {}
-    return (
-      <button
-        className="buttonInvoice"
-        style={darkMode ? { borderColor: "#151624" } : {}}
-        onClick={toggleNewInvoice}
-      >
-        <div className="buttonAdd">
-          <p id="buttonplus">+</p>
-        </div>
-        <div>New Invoice</div>
-      </button>
-    );
+
+export function NewInvoice({setOpenModal}) {
+  const handleClick = () => {
+    setOpenModal(true)
   }
+
+  const theme = React.useContext(ThemeContext);
+  const darkMode = theme.state.darkMode;
+  
+  return (
+    <button
+      className="buttonInvoice"
+      style={darkMode ? { borderColor: "#151624" } : {}}
+      onClick={handleClick}
+    >
+      <div className="buttonAdd">
+        <p id="buttonplus">+</p>
+      </div>
+      <div className="newFull">New Invoice</div>
+    </button>
+  );
+}

@@ -11,7 +11,8 @@ export function FilterByStatus({ setStatus }) {
  const refSelect = React.useRef()
   return (
     <div className="statusButton">
-      <label style={{ fontWeight: 600 }}>Filter by status</label>
+      <label className='filterLabelFull' style={{ fontWeight: 600 }}>Filter by status</label>
+      <label className='filterLabelShort' style={{ fontWeight: 600 }}>Filter</label>
       <select className="selectFilter" ref={refSelect} onChange={handleStatus}>
         <option></option>
         <option value="paid">Paid</option>

@@ -1,19 +1,24 @@
 ul {
   list-style: none;
 }
+.filterLabelShort{
+  display: none;
+}
+.newShort{display: none;}
 .App {
   background-color: white;
   height: 100%;
   position: absolute;
   left: 0;
   width: 100%;
-  overflow: hidden;
   display: grid;
-  grid-template-columns: 5.88fr 94.12fr;
+  grid-template-columns: 6fr 94fr;
+ 
 }
 
 /*--------------------------------------------------------------INVOICE COLUMN-----------------------------------------------------------------*/
 .InvoiceColumn {
+  height: 100vh;
   background-color: #1e203a;
   color: white;
   border-right: solid;
@@ -87,10 +92,100 @@ ul {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  height: auto;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+/*----------------------------------------------InvoiceAppHeader-----------------------------------------------------------------------*/
+.InvoiceHeader {
+  margin-top: 50px;
+  width: 60vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: 15vh;
 }
 
+.InvoiceHeaderLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 50%;
+  height: 100%;
+}
+.InvoiceHeaderRight {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  height: 100%;
+  align-items: center;
+}
+
+#title {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.statusButton {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.buttonInvoice {
+  background-color: #7d5cf9; /* Green */
+  color: white;
+  text-align: center;
+  border: solid;
+  border-radius: 20px;
+  width: 65%;
+  height: 40%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.buttonInvoice:hover {
+  background-color: #9783fa;
+  cursor: pointer;
+}
+
+.buttonAdd {
+  width: 22.5%;
+  height: 80%;
+  border-radius: 20px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.buttonContainer {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+}
+
+#buttonplus {
+  color: #7d5cf9;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.selectFilter {
+  margin-left: 10px;
+  margin-top: 5px;
+  width: 20px;
+  background-color: #f9f9fa;
+  border: none;
+  border-radius: 20px;
+}
+/*----------------------------------------------InvoiceAppSection-----------------------------------------------------------------------*/
 .InvoiceSection {
+  margin-top: 30px;
   width: 60vw;
   display: flex;
   flex-direction: column;
@@ -128,91 +223,185 @@ ul {
   align-items: center;
 
 }
-
-.InvoiceHeader {
-  width: 60vw;
-  height: 15vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-top: 5vh;
+.shortText{
+  display: none;
 }
 
-.InvoiceHeaderLeft {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  width: 50%;
-  height: 100%;
-}
-.InvoiceHeaderRight {
-  display: flex;
-  flex-direction: row;
-  width: 50%;
-  height: 100%;
-  align-items: center;
+
+@media (min-width : 500px) and (max-width : 1020px){
+  .App {
+    background-color: white;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 10fr 90fr;
+   
+  }
+  .InvoiceHeader {
+    margin-top: 30px;
+    width: 85vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 15vh;
+  }
+  .InvoiceSection {
+    margin-top: 20px;
+    width: 85vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .shortText{
+    display: none;
+  }
 }
 
-#title {
-  font-size: 2rem;
-  font-weight: 700;
+@media (max-width : 767px){
+  .App {
+    background-color: white;
+    height: 100%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .InvoiceColumn {
+    height: 10vh;
+    background-color: #1e203a;
+    color: white;
+    border:none;
+    border-top-right-radius: 0%;
+    border-bottom-right-radius: 0%;
+    display: grid;
+    grid-template-columns: 15fr 70fr 15fr;
+  }
+  
+  #circle-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #7d5cf9;
+    height: 10vh;
+    border: none;
+    margin: none;
+  }
+  #circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background: white;
+  }
+  
+  #circle-vow {
+    background-color: #7d5cf9;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(75% 0, 25% 0, 50% 50%);
+    height: 100%;
+  }
+  
+  #profile-div {
+    border-left: solid 2px;
+    border-top: none;
+    border-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  #center-column {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 10px;
+    margin-top: 15px;
+  }
+  #moon {
+    height: 25px;
+    width: 25px;
+  }
+  #moon:hover {
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+  }
+  
+  #sun {
+    height: 25px;
+    width: 25px;
+  }
+  
+  #sun:hover{
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+  }
+  .InvoiceApp {
+    color: black;
+    background-color: #f9f9fa;
+    width: 100vw;
+    font-size: 12px;
+  }
+  .InvoiceHeaderLeft{
+    font-size: 12px;
+    font-weight: normal;
+  }
+  .InvoiceHeader{
+    width: 95vw;
+    font-size: 12px;
+  }
+  .InvoiceSection{
+    width: 95vw;
+  }
+  .fullText{
+    display: none;
+  }
+  .shortText{display: inline;}
+  .filterLabelFull{
+    display: none;
+  }
+  .filterLabelShort{
+    display: inline;
+  }
+  .newFull{display: none;}
+  .buttonContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+  }
+  .buttonAdd{
+    width: 50%;
+  }
+  .InvoiceDiv{
+    height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .InvoiceLi {
+    width: 25%;
+    height: 25%;
+  }
+  .InvoiceLiButton {
+    width: 25%;
+    font-weight: normal;
+    background-color: #fffaef;
+    border-radius: 10px;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  }
 }
 
-.statusButton {
-  width: 50%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-
-.buttonInvoice {
-  background-color: #7d5cf9; /* Green */
-  color: white;
-  text-align: center;
-  font-size: 1rem;
-  border: solid;
-  border-radius: 20px;
-  width: 65%;
-  height: 40%;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-.buttonInvoice:hover {
-  background-color: #9783fa;
-  cursor: pointer;
-}
-
-.buttonAdd {
-  width: 22.5%;
-  height: 80%;
-  border-radius: 20px;
-  background: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.buttonContainer {
-  width: 50%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#buttonplus {
-  color: #7d5cf9;
-  font-weight: bold;
-  font-size: 18;
-}
-
-.selectFilter {
-  margin-left: 10px;
-  margin-top: 5px;
-  width: 20px;
-  background-color: #f9f9fa;
-  border: none;
-  border-radius: 20px;
+.divModal{
+  border: red solid 3px;
 }

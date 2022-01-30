@@ -50,18 +50,18 @@ function InvoiceSection({datas, status}) {
   const theme = React.useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
   let internData = datas
-  // if (status === "paid"){
-  //   internData = datas.filter(data => data.status === "Paid")
-  //   console.log(`test paid ${internData.length}`)
-  // }
-  // if (status === "pending"){
-  //   internData = datas.filter(data => data.status === "Pending")
-  //   console.log(`test pending ${internData.length}`)
-  // }
-  // if (status === "draft"){
-  //   internData = datas.filter(data => data.status === "Draft")
-  //   console.log(`test draft ${internData.length}`)
-  // }
+  if (status === "paid"){
+    internData = datas.filter(data => data.status === "Paid")
+    console.log(`test paid ${internData.length}`)
+  }
+  if (status === "pending"){
+    internData = datas.filter(data => data.status === "Pending")
+    console.log(`test pending ${internData.length}`)
+  }
+  if (status === "draft"){
+    internData = datas.filter(data => data.status === "Draft")
+    console.log(`test draft ${internData.length}`)
+  }
   return (
     <section className="InvoiceSection">
       {internData.map((data) => (
