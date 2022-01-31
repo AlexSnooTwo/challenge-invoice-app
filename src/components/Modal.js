@@ -43,13 +43,6 @@ export default function Modal({datas, open, setOpenModal, onAddData }) {
     zIndex: "1000",
   };
 
-  const test = {
-    serial: "TEST",
-    date: "TEST",
-    name: "TEST",
-    price: 1111,
-    status: "Pending",
-  };
   if (!open) return null;
   return (
     <>
